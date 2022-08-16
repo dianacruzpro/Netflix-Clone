@@ -1,0 +1,148 @@
+@import "./imports/reset.css", "./imports/mixins.scss";
+
+.header {
+  width: 100%;
+  background: slateblue;
+  padding: 1.5em 5%;
+  @include flex(row, nowrap, space-between, center);
+  &__h1 {
+    background-color: red;
+    max-width: 300px;
+
+    @include mv(960px){
+      max-width: 400px;
+    }
+  }
+  &__img {}
+  &__nav {
+    background: springgreen;
+    width: calc(100% - 400px);
+  }
+  &__ul {
+    @include flex(row, nowrap, flex-end, center);
+  }
+  &__li {
+    background: orange;
+    margin: 0 0 0 1em;
+  }
+  &__a {}
+  &__login {
+    padding: .5em 1em;
+    border-radius: .4em;
+    background: blue;
+  }
+  &__select {}
+}
+
+.select {
+  background: orchid;
+  height: 2em;
+  overflow: hidden;
+  border: 1px solid #fff;
+  border-radius: .3em;
+  position: relative;
+  &::after{
+    content: "▼";
+    height: 100%;
+    position: absolute;
+    top: .05em;
+    right: .5em;
+    @include flex(row, nowrap, center, center);
+    color: inherit;
+  }
+  &::before{
+    content: "◆";
+    height: 100%;
+    position: absolute;
+    top: .05em;
+    left: .5em;
+    @include flex(row, nowrap, center, center);
+    color: inherit;
+  }
+  &__span{
+    height: 1.9em;
+    @include flex(row, nowrap, center, center);
+    padding: .5em 1.8em .5em 1em;
+  }
+  &__ul {}
+  &__li {}
+  &__a {
+    padding: .5em 1em;
+  }
+}
+
+.landing {
+  width: 100%;
+  min-height: 80vh;
+  background: gray;
+  @include flex(column, nowrap, center, center);
+  &__h2 {
+    margin: 0 0 1em;
+  }
+  &__h3 {
+    margin: 0 0 1em;
+  }
+  &__p {
+    margin: 0 0 1em;
+  }
+  &__form {
+    background-color: springgreen;
+  }
+  &__input {
+    background-color: beige;
+    padding: 1em 2em;
+  }
+  &__submit {
+    background-color: purple;
+    padding: 1em 2em;
+  }
+}
+
+.faq {
+  &__button {
+  }
+  &__info {
+  }
+  &__li {
+  }
+  &__p {
+  }
+  &__ul {
+  }
+}
+.footer {
+  &__a {
+  }
+  &__fila {
+  }
+  &__li {
+  }
+  &__p {
+  }
+  &__ul {
+  }
+}
+.idioma {
+  &__a {
+  }
+  &__li {
+  }
+}
+.main {
+}
+.register {
+  &__form {
+  }
+  &__input {
+  }
+  &__submit {
+  }
+}
+.specs {
+  &__h4 {
+  }
+  &__p {
+  }
+  &__video {
+  }
+}

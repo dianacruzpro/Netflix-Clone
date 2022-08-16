@@ -1,0 +1,143 @@
+@charset "UTF-8";
+@import "./imports/reset.css"; /* Mixin flex */
+/*Mixin Responsive */
+.header {
+  width: 100%;
+  background: slateblue;
+  padding: 1.5em 5%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .header {
+    flex-direction: column;
+  }
+}
+.header__h1 {
+  background-color: red;
+  max-width: 300px;
+}
+@media screen and (max-width: 960px) {
+  .header__h1 {
+    max-width: 400px;
+  }
+}
+.header__nav {
+  background: springgreen;
+  width: calc(100% - 400px);
+}
+.header__ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .header__ul {
+    flex-direction: column;
+  }
+}
+.header__li {
+  background: orange;
+  margin: 0 0 0 1em;
+}
+.header__login {
+  padding: 0.5em 1em;
+  border-radius: 0.4em;
+  background: blue;
+}
+.select {
+  background: orchid;
+  height: 2em;
+  overflow: hidden;
+  border: 1px solid #fff;
+  border-radius: 0.3em;
+  position: relative;
+}
+.select::after {
+  content: "▼";
+  height: 100%;
+  position: absolute;
+  top: 0.05em;
+  right: 0.5em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+}
+@media screen and (max-width: 480px) {
+  .select::after {
+    flex-direction: column;
+  }
+}
+.select::before {
+  content: "◆";
+  height: 100%;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+}
+@media screen and (max-width: 480px) {
+  .select::before {
+    flex-direction: column;
+  }
+}
+.select__span {
+  height: 1.9em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1.8em 0.5em 1em;
+}
+@media screen and (max-width: 480px) {
+  .select__span {
+    flex-direction: column;
+  }
+}
+.select__a {
+  padding: 0.5em 1em;
+}
+
+.landing {
+  width: 100%;
+  min-height: 80vh;
+  background: gray;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .landing {
+    flex-direction: column;
+  }
+}
+.landing__h2 {
+  margin: 0 0 1em;
+}
+.landing__h3 {
+  margin: 0 0 1em;
+}
+.landing__p {
+  margin: 0 0 1em;
+}
+.landing__form {
+  background-color: springgreen;
+}
+.landing__input {
+  background-color: beige;
+  padding: 1em 2em;
+}
+.landing__submit {
+  background-color: purple;
+  padding: 1em 2em;
+}/*# sourceMappingURL=app.css.map */
