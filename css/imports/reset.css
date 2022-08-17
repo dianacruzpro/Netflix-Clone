@@ -113,32 +113,29 @@ form, input, textarea, select, button, label{
   background-color: transparent;
   display: flex;
   color: inherit;
-  /* opcional appearance: none; */
+  /* opcional*/ appearance: none;
 }
 
-/* ⚙ Reseteamos las tablas */
 table,tr,td{
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* ⚙ Evitamos problemas con los svg */
 svg{
-  width: 100%;
+  width: auto;
   display: block;
   fill: currentColor;
 }
 
-/* ⚙ Configuramos la tipografía para toda la web */
-body{
-  min-height: 100vh;
-  font-size: 100%;
+body {
   font-family: var(--tipo-principal);
-  color: var(--color-primario);
-  background-color: var(--color-secundario);
-  /* opcional */ line-height: 1.4em; /* recomendacion de interlineado: entre 1.4em y 1.6em */
-  /* opcional */ /*hyphens: auto;*/
-  /* opcional */ font-smooth: always; /* para definir mas la letra */
-  /* opcional */ --webkit-font-smoothing: antialiased;
-  /* opcional */ --moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+  line-height: 1.4em;
+  min-height: 100vh;
+  background-color: var(--blanco);
+  color:var(--negro);
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

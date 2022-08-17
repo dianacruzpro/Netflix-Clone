@@ -135,9 +135,200 @@
 }
 .landing__input {
   background-color: beige;
-  padding: 1em 2em;
+  padding: 0.7em 1.4em;
 }
 .landing__submit {
   background-color: purple;
-  padding: 1em 2em;
+  padding: 0.7em 1.4em;
+}
+
+.specs {
+  background-color: slateblue;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 0;
+  margin: 1em 0;
+}
+@media screen and (max-width: 480px) {
+  .specs {
+    flex-direction: column;
+  }
+}
+.specs.inverso .specs__center {
+  flex-direction: row-reverse;
+}
+.specs__center {
+  background-color: orange;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .specs__center {
+    flex-direction: column;
+  }
+}
+.specs__col {
+  width: calc(50% - 2em);
+  background-color: darkcyan;
+}
+.specs__h4 {
+  margin: 0 0 1em;
+}
+.specs__video {
+  background-color: red;
+}
+
+.faq {
+  background: orchid;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .faq {
+    flex-direction: column;
+  }
+}
+.faq__center {
+  width: 90%;
+  background: rebeccapurple;
+  max-width: 800px;
+}
+.faq__h3 {
+  background-color: aqua;
+  margin: 0 0 1em;
+}
+.faq__ul {
+  background-color: brown;
+}
+.faq__li {
+  height: 3em;
+  overflow: hidden;
+  background-color: indigo;
+  margin: 1em 0;
+  transition: all 0.5s ease-in-out;
+}
+.faq__li.activo {
+  height: 19em;
+}
+.faq__li.activo .faq__svg {
+  transform: rotate(0deg);
+}
+.faq__button {
+  width: 100%;
+  min-height: 3em;
+  background-color: darkcyan;
+  padding: 0 2em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .faq__button {
+    flex-direction: column;
+  }
+}
+.faq__span {
+  background-color: green;
+}
+.faq__svg {
+  background-color: red;
+  width: 2em;
+  height: 2em;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+.faq__info {
+  padding: 2em;
+  background-color: tomato;
+}
+.faq__p {
+  background-color: palevioletred;
+  margin: 0 0 1em;
+}
+
+.register {
+  background: slategray;
+  padding: 2em 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .register {
+    flex-direction: column;
+  }
+}
+.register__p {
+  max-width: 600px;
+  background: yellow;
+  margin: 0 0 1em;
+}
+.register__form {
+  background: blue;
+}
+.register__input {
+  padding: 0.05em 1em;
+  background: white;
+}
+.register__submit {
+  padding: 0.5em 1em;
+  background: red;
+}
+
+.footer {
+  background: darkcyan;
+  padding: 10vh 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+.footer__center {
+  background: orange;
+  width: 90%;
+  max-width: 600px;
+}
+.footer__fila {
+  background: greenyellow;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media screen and (max-width: 480px) {
+  .footer__fila {
+    flex-direction: column;
+  }
+}
+.footer__p {
+  background: rebeccapurple;
+  margin: 0 0 2em;
+}
+.footer__ul {
+  background: darkgreen;
+  margin: 0 0 2em;
+}
+.footer__li {
+  width: calc(25% - 2em);
+  background: gold;
+}
+.footer__select {
+  max-width: 150px;
+  margin: 0 0 1em;
 }/*# sourceMappingURL=app.css.map */

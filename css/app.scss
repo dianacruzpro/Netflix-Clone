@@ -1,4 +1,4 @@
-@import "./imports/reset.css", "./imports/mixins.scss";
+@import "./imports/reset.css", "./imports/_mixins.scss";
 
 .header {
   width: 100%;
@@ -33,7 +33,6 @@
   }
   &__select {}
 }
-
 .select {
   background: orchid;
   height: 2em;
@@ -70,7 +69,6 @@
     padding: .5em 1em;
   }
 }
-
 .landing {
   width: 100%;
   min-height: 80vh;
@@ -90,59 +88,150 @@
   }
   &__input {
     background-color: beige;
-    padding: 1em 2em;
+    padding: 0.7em 1.4em;
   }
   &__submit {
     background-color: purple;
-    padding: 1em 2em;
-  }
-}
-
-.faq {
-  &__button {
-  }
-  &__info {
-  }
-  &__li {
-  }
-  &__p {
-  }
-  &__ul {
-  }
-}
-.footer {
-  &__a {
-  }
-  &__fila {
-  }
-  &__li {
-  }
-  &__p {
-  }
-  &__ul {
-  }
-}
-.idioma {
-  &__a {
-  }
-  &__li {
-  }
-}
-.main {
-}
-.register {
-  &__form {
-  }
-  &__input {
-  }
-  &__submit {
+    padding: 0.7em 1.4em;
   }
 }
 .specs {
+  background-color: slateblue;
+  @include flex(row, nowrap, center, center);
+  padding: 10vh 0;
+  margin: 1em 0;
+
+  &.inverso .specs__center{
+    flex-direction: row-reverse;
+  }
+  &__center{
+    background-color: orange;
+    width: 90%;
+    max-width: 1200px;
+    @include flex(row, nowrap, space-between, center);
+  }
+  &__col {
+    width: calc(100%/2 - 2em);
+    background-color: darkcyan;
+  }
   &__h4 {
+    margin: 0 0 1em;
   }
-  &__p {
-  }
+  &__p {}
   &__video {
+    background-color: red;
   }
 }
+.faq {
+  background: orchid;
+  @include flex(row, nowrap, center, center);
+
+  &__center{
+    width: 90%;
+    background: rebeccapurple;
+    max-width:800px;
+  }
+  &__h3{
+    background-color: aqua;
+    margin: 0 0 1em;
+  }
+  &__ul {
+    background-color: brown;
+  }
+  &__li {
+    height: 3em;
+    overflow: hidden;
+    background-color: indigo;
+    margin: 1em 0;
+    transition:all .5s ease-in-out;
+    &.activo{
+      height: 19em;
+    }
+    &.activo .faq__svg{
+      transform: rotate(0deg);
+    }
+  }
+  &__button {
+    width: 100%;
+    min-height: 3em;
+    background-color: darkcyan;
+    padding: 0 2em;
+    @include flex(row, nowrap, space-between, center);
+    cursor: pointer;
+  }
+  &__span{
+    background-color: green;
+    
+  }
+  &__svg{
+    background-color: red;
+    width: 2em;
+    height: 2em;
+    transform: rotate(45deg);
+    transition:all .5s ease;
+  }
+  &__info {
+    padding: 2em;
+    background-color: tomato;
+  }
+  &__p {
+    background-color: palevioletred;
+    margin: 0 0 1em;
+  }
+}
+.register {
+  background: slategray;
+  padding: 2em 0;
+  @include flex(column, nowrap, center, center);
+  &__p{
+    max-width: 600px;
+    background: yellow;
+    margin: 0 0 1em;
+  }
+  &__form {
+    background: blue;
+  }
+  &__input {
+    padding: .05em 1em;
+    background: white;
+  }
+  &__submit {
+    padding: .5em 1em;
+    background: red;
+  }
+}
+.footer {
+  background: darkcyan;
+  padding: 10vh 0;
+  @include flex(row, nowrap, center, center);
+  &__center{
+    background: orange;
+    width: 90%;
+    max-width: 600px;
+  }
+  &__fila {
+    background: greenyellow;
+    @include flex(row, nowrap, space-between, flex-start);
+  }
+  &__p {
+    background: rebeccapurple;
+    margin: 0 0 2em;
+  }
+  &__ul {
+    background: darkgreen;
+    margin: 0 0 2em;
+  }
+  &__li {
+
+    width: calc(100%/4 - 2em);
+    background:gold;
+  }
+  &__select{
+    max-width: 150px;
+    margin: 0 0 1em;
+  }
+  &__a {}
+}
+.main {}
+
+
