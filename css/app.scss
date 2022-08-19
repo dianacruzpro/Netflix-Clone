@@ -1,45 +1,54 @@
-@import "./imports/reset.css", "./imports/_mixins.scss";
+@import 'imports/_mixins' , 'imports/reset.css', 'imports/variables';
 
 .header {
   width: 100%;
-  background: slateblue;
   padding: 1.5em 5%;
+  color: white;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
   @include flex(row, nowrap, space-between, center);
-  &__h1 {
-    background-color: red;
-    max-width: 300px;
 
-    @include mv(960px){
-      max-width: 400px;
-    }
+  &__h1 {
+    width: 100%;
+    // max-width: 300px;
   }
-  &__img {}
+  &__img {
+    width: 100%;
+    max-width: 8.6em;
+    padding: .3em 0 0 .2em;
+    fill: var(--rojo);
+  }
   &__nav {
-    background: springgreen;
+    // background: springgreen;
     width: calc(100% - 400px);
   }
   &__ul {
     @include flex(row, nowrap, flex-end, center);
   }
   &__li {
-    background: orange;
-    margin: 0 0 0 1em;
+    // background: orange;
+    margin: 0 0 0 2em;
   }
-  &__a {}
   &__login {
     padding: .5em 1em;
-    border-radius: .4em;
-    background: blue;
+    border-radius: .2em;
+    background: var(--rojo);
+    font-size: 1em;
+    margin: .2em 0 0 0;
   }
   &__select {}
 }
 .select {
-  background: orchid;
-  height: 2em;
+  // background: orchid;
+  height: 2.5em;
   overflow: hidden;
   border: 1px solid #fff;
-  border-radius: .3em;
+  // border-radius: .3em;
   position: relative;
+  font-size: .9em;
+  margin: 0 .2em 0 0;
   &::after{
     content: "▼";
     height: 100%;
@@ -53,13 +62,13 @@
     content: "◆";
     height: 100%;
     position: absolute;
-    top: .05em;
+    top: 0em;
     left: .5em;
     @include flex(row, nowrap, center, center);
     color: inherit;
   }
   &__span{
-    height: 1.9em;
+    height: 100%;
     @include flex(row, nowrap, center, center);
     padding: .5em 1.8em .5em 1em;
   }
@@ -71,81 +80,126 @@
 }
 .landing {
   width: 100%;
-  min-height: 80vh;
-  background: gray;
+  min-height: 68vh;
+  background: url(../assets/home.jpg) no-repeat center center / cover;
+  color: var(--blanco);
   @include flex(column, nowrap, center, center);
+  text-align: center;
+  position: relative;
+  padding: 6vh 0 0;
+
+  &::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,.6);
+  }
   &__h2 {
-    margin: 0 0 1em;
+    max-width: 14em;
+    margin: 0 0 .3em;
+    font-size: 3em;
+    font-weight: 600;
+    // line-height: .9;
+    position: relative;
+    z-index: 2;
   }
   &__h3 {
-    margin: 0 0 1em;
+    margin: 0 0 1.2em;
+    font-size: 1.5em;
+    position: relative;
+    z-index: 2;
   }
   &__p {
+    max-width: 45em;
     margin: 0 0 1em;
+    font-size: 1.2em;
+    position: relative;
+    z-index: 2;
   }
   &__form {
+    width: 100%;
+    max-width: 41em;
     background-color: springgreen;
+    position: relative;
+    z-index: 2;
   }
   &__input {
     background-color: beige;
     padding: 0.7em 1.4em;
+    font-size: 1.3em;
+    width: 70%;
+    color: var(--negro);
   }
   &__submit {
-    background-color: purple;
+    background-color: var(--rojo);
     padding: 0.7em 1.4em;
+    font-size: 1.5em;
+    position: relative;
+    width: 30%;
+    @include flex(row, nowrap, center, center);
+    cursor: pointer;
   }
 }
 .specs {
-  background-color: slateblue;
+  background-color: var(--negro);
   @include flex(row, nowrap, center, center);
-  padding: 10vh 0;
-  margin: 1em 0;
+  padding: 9.5vh 0;
+  margin: .4em 0;
+  color: var(--blanco);
 
   &.inverso .specs__center{
     flex-direction: row-reverse;
   }
+
   &__center{
-    background-color: orange;
-    width: 90%;
-    max-width: 1200px;
+    width: 92%;
+    max-width: 68.7em;
     @include flex(row, nowrap, space-between, center);
   }
   &__col {
-    width: calc(100%/2 - 2em);
-    background-color: darkcyan;
+    width: calc(100%/2 - 1em);
   }
   &__h4 {
-    margin: 0 0 1em;
+    margin: 0 0 .5em;
+    font-size: 3em;
+    font-weight: 600;
   }
-  &__p {}
+  &__p {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
   &__video {
-    background-color: red;
+
   }
 }
 .faq {
-  background: orchid;
-  @include flex(row, nowrap, center, center);
+  background: var(--negro);
+  color: var(--blanco);
+  @include flex(column, nowrap, center, center);
 
   &__center{
-    width: 90%;
-    background: rebeccapurple;
-    max-width:800px;
+    width: 70%;
+    max-width:50em;
   }
   &__h3{
-    background-color: aqua;
-    margin: 0 0 1em;
+    margin: 1.5em 0 1em;
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
   }
   &__ul {
-    background-color: brown;
   }
   &__li {
-    height: 3em;
+    height: 4.7em;
     overflow: hidden;
-    background-color: indigo;
-    margin: 1em 0;
+    background-color: var(--gris);
+    margin: .6em 0;
     transition:all .5s ease-in-out;
     &.activo{
-      height: 19em;
+      height: 33em;
+      // height: auto;
     }
     &.activo .faq__svg{
       transform: rotate(0deg);
@@ -153,18 +207,16 @@
   }
   &__button {
     width: 100%;
-    min-height: 3em;
-    background-color: darkcyan;
+    min-height: 4.7em;
     padding: 0 2em;
+    border-bottom: 2px solid var(--negro);
     @include flex(row, nowrap, space-between, center);
     cursor: pointer;
   }
   &__span{
-    background-color: green;
-    
+    font-size: 1.5em;
   }
   &__svg{
-    background-color: red;
     width: 2em;
     height: 2em;
     transform: rotate(45deg);
@@ -172,65 +224,87 @@
   }
   &__info {
     padding: 2em;
-    background-color: tomato;
   }
   &__p {
-    background-color: palevioletred;
     margin: 0 0 1em;
+    font-size: 1.5em;
+    line-height: 1.5;
   }
 }
 .register {
-  background: slategray;
-  padding: 2em 0;
+  background: var(--negro);
+  padding: 4em 0;
   @include flex(column, nowrap, center, center);
+  text-align: center;
   &__p{
-    max-width: 600px;
-    background: yellow;
+    max-width: 950px;
+    // background: yellow;
     margin: 0 0 1em;
+    font-size: 1.25em;
   }
   &__form {
-    background: blue;
+    width: 100%;
+    max-width: 40em;
+    background-color: springgreen;
   }
   &__input {
-    padding: .05em 1em;
-    background: white;
+    color: var(--negro);
+    padding: 0.7em 1.4em;
+    background: var(--blanco);
+    width: 70%;
+    font-size: 1.4em;
   }
   &__submit {
-    padding: .5em 1em;
-    background: red;
+    padding: 0.7em 1.4em;
+    background: var(--rojo);
+    width: 30%;
+    font-size: 1.5em;
+    @include flex(row, nowrap, center, center);
+    cursor: pointer;
   }
 }
 .footer {
-  background: darkcyan;
-  padding: 10vh 0;
+  background: var(--negro);
+  padding: 7vh 0 3vh;
   @include flex(row, nowrap, center, center);
+  margin: .5em 0 0;
+  color: var(--gris-footer);
   &__center{
-    background: orange;
     width: 90%;
-    max-width: 600px;
+    max-width: 55em;
   }
   &__fila {
-    background: greenyellow;
+    // background: greenyellow;
     @include flex(row, nowrap, space-between, flex-start);
   }
   &__p {
-    background: rebeccapurple;
+    // background: rebeccapurple;
     margin: 0 0 2em;
+    font-size: 1.1em;
   }
   &__ul {
-    background: darkgreen;
+    // background: darkgreen;
     margin: 0 0 2em;
+    font-size: .8em;
   }
   &__li {
-
-    width: calc(100%/4 - 2em);
-    background:gold;
+    margin: 0 0 1em;
+    // background:gold;
   }
   &__select{
-    max-width: 150px;
-    margin: 0 0 1em;
+    max-width: 145px;
+    margin: 0 0 1.2em;
+    padding: .5em 1em;
+    font-size: 1em;
+    height: 2.5em;
+    border: 1px solid var(--gris-footer);
   }
-  &__a {}
+  .brand{
+    font-size: .8em;
+  }
+  &__a {
+
+  }
 }
 .main {}
 

@@ -11,10 +11,11 @@
 :root{
   --color-primario:#181818;
   --color-secundario:#f0f0f0;
+  --color-terciario:#303030;
 
   /* Tipografía */
-  --tipo-principal:Helvetica,arial,sans-serif;
-  --tipo-secundaria:Verdana;
+  --tipo-principal:'Netflix Sans Regular';
+  --tipo-secundaria:'Netflix Sans Thin';
 }
 
 /* ⚙ Las adaptamos al modo oscuro */
@@ -130,11 +131,11 @@ svg{
 body {
   font-family: var(--tipo-principal);
   font-size: 100%;
-  line-height: 1.4em;
+  /* line-height: 1.4em; */
   min-height: 100vh;
-  background-color: var(--blanco);
-  color:var(--negro);
-  hyphens: auto;
+  background-color: var(--gris);
+  color:var(--blanco);
+  /* hyphens: auto; */
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
