@@ -9,20 +9,33 @@
   z-index: 3;
   background: linear-gradient(180deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
   @include flex(row, nowrap, space-between, center);
+  @include mv(){
+    @include flex(row, nowrap, space-between, flex-start);
+  }
 
   &__h1 {
     width: 100%;
     // max-width: 300px;
+    padding: 0 0 0 .5em;
+    @include mv(){
+      width: 35%;
+      padding: 0;
+    }
   }
   &__img {
     width: 100%;
     max-width: 8.6em;
-    padding: .3em 0 0 .2em;
     fill: var(--rojo);
+    @include mv(){
+      max-width: 6em;
+    }
   }
   &__nav {
     // background: springgreen;
-    width: calc(100% - 400px);
+    width: calc(100% - 25em);
+    @include mv(){
+      width: 65%;
+    }
   }
   &__ul {
     @include flex(row, nowrap, flex-end, center);
@@ -30,25 +43,42 @@
   &__li {
     // background: orange;
     margin: 0 0 0 2em;
+    @include mv(){
+      margin: 0 0 0 .5em;
+    }
   }
   &__login {
     padding: .5em 1em;
-    border-radius: .2em;
     background: var(--rojo);
     font-size: 1em;
     margin: .2em 0 0 0;
+    border-radius: .2em;
+    @include mv(){
+      margin: 0;
+      padding: .3em .5em;
+      font-size: .9em;
+    }
   }
-  &__select {}
+  &__svg {
+    width: 1em;
+    height: 1em;
+  }
 }
 .select {
-  // background: orchid;
   height: 2.5em;
   overflow: hidden;
-  border: 1px solid #fff;
-  // border-radius: .3em;
+  border: 1px solid var(--blanco);
+  border-radius: .4em;
   position: relative;
+  padding: 0 0 0 .4em;
   font-size: .9em;
-  margin: 0 .2em 0 0;
+  // margin: 0 .2em 0 0;
+  @include flex(row, nowrap, flex-start,center);
+  @include mv(){
+    border-radius: .1em;
+    height:2.1em;
+  }
+
   &::after{
     content: "▼";
     height: 100%;
@@ -58,35 +88,29 @@
     @include flex(row, nowrap, center, center);
     color: inherit;
   }
-  &::before{
-    content: "◆";
-    height: 100%;
-    position: absolute;
-    top: 0em;
-    left: .5em;
-    @include flex(row, nowrap, center, center);
-    color: inherit;
-  }
   &__span{
+    width: calc(100% - 2em);
     height: 100%;
     @include flex(row, nowrap, center, center);
-    padding: .5em 1.8em .5em 1em;
+    padding: .5em 1.2em .5em .7em;
+    font-size: .95em;
   }
   &__ul {}
   &__li {}
-  &__a {
-    padding: .5em 1em;
-  }
 }
 .landing {
   width: 100%;
-  min-height: 68vh;
-  background: url(../assets/home.jpg) no-repeat center center / cover;
+  min-height: 76vh;
+  background: url(../assets/SV-es-20220808-popsignuptwoweeks-perspective_alpha_website_medium.jpg) no-repeat center center / cover;
   color: var(--blanco);
   @include flex(column, nowrap, center, center);
   text-align: center;
   position: relative;
   padding: 6vh 0 0;
+
+  @include mv(){
+    min-height: 64vh;
+  }
 
   &::after{
     content: '';
@@ -97,19 +121,30 @@
     background: rgba(0,0,0,.6);
   }
   &__h2 {
-    max-width: 14em;
+    max-width: 13.5em;
     margin: 0 0 .3em;
     font-size: 3em;
-    font-weight: 600;
-    // line-height: .9;
+    font-weight: 700;
+    letter-spacing:.02em;
     position: relative;
     z-index: 2;
+    line-height: 1.2em;
+    @include mv(){
+      max-width: 90%;
+      font-size: 1.7em;
+    }
   }
   &__h3 {
     margin: 0 0 1.2em;
-    font-size: 1.5em;
+    font-size: 1.6em;
     position: relative;
     z-index: 2;
+
+    @include mv(){
+      // max-width: 95%;
+      font-size: 1.2em;
+      margin: .5em 0 .8em;
+    }
   }
   &__p {
     max-width: 45em;
@@ -117,13 +152,21 @@
     font-size: 1.2em;
     position: relative;
     z-index: 2;
+
+    @include mv(){
+      max-width: 15em;
+      margin: 0 0 .6em;
+    }
   }
   &__form {
     width: 100%;
     max-width: 41em;
-    background-color: springgreen;
     position: relative;
     z-index: 2;
+    @include mv(){
+      @include flex(column, nowrap, center, center);
+      width: 90%;
+    }
   }
   &__input {
     background-color: beige;
@@ -131,6 +174,10 @@
     font-size: 1.3em;
     width: 70%;
     color: var(--negro);
+    @include mv(){
+      width: 100%;
+      font-size: 1em;
+    }
   }
   &__submit {
     background-color: var(--rojo);
@@ -140,39 +187,135 @@
     width: 30%;
     @include flex(row, nowrap, center, center);
     cursor: pointer;
+    @include mv(){
+      margin: .8em 0 0 0;
+      font-size: 1em;
+      width: 35%;
+      border-radius: .2em;
+    }
   }
 }
 .specs {
-  background-color: var(--negro);
+  background-color:var(--negro);
   @include flex(row, nowrap, center, center);
-  padding: 9.5vh 0;
+  padding: 6vh 0;
   margin: .4em 0;
   color: var(--blanco);
+  @include mv(){
+    padding: 5vh 0;   
+  }
+  
 
   &.inverso .specs__center{
     flex-direction: row-reverse;
+    position: relative;
+    @include mv(){
+      @include flex(column, nowrap, center, center);
+    }
+  }
+
+  &__card{
+    @include flex(row, nowrap, center, center);
+    background: var(--negro);
+    border: 2px solid var(--gris);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .card{
+    @include flex(row, nowrap, space-between, center);
+    width: fit-content;
+    margin: 0 auto;
+    padding: .2em .8em;
+    text-align: left;
+    &__img{
+      width: auto;
+      height: 70px;
+
+      @include mv(){
+        width: auto;
+        height: 50px;
+      }
+    }
+    &__text{
+      padding: 0 0 0 1em;
+      margin: 0 .5em 0 0;
+    }
+    &__p{
+      font-size: 1.1em;
+      font-weight: bold;
+      @include mv(){
+        font-size: .9em;
+      }
+
+      &--dos{
+        font-weight: 400;
+        font-size: .9em;
+        color: var(--azul);
+        @include mv(){
+          font-size: .8em;
+
+        }
+      }
+    }
   }
 
   &__center{
     width: 92%;
     max-width: 68.7em;
     @include flex(row, nowrap, space-between, center);
+    @include mv(){
+      @include flex(column, nowrap, center, center);
+    }
   }
   &__col {
     width: calc(100%/2 - 1em);
+    position: relative;
+    @include mv(){
+      width: 100%; 
+      text-align: center;
+    }
   }
   &__h4 {
     margin: 0 0 .5em;
     font-size: 3em;
     font-weight: 600;
+
+    @include mv(){
+      font-size: 1.7em; 
+    }
   }
   &__p {
     font-size: 1.5em;
     line-height: 1.5;
+    @include mv(){
+      font-size: 1.2em; 
+      line-height: 1.2em;
+    }
   }
   &__video {
+    position: absolute;
+    top: 0;
+    z-index: 1;
 
+    &--uno{
+      transform: scale(.74) translateY(19%);
+    }
+  
+    &--dos{
+      transform: scale(.64) translateY(-8%);
+    }
   }
+
+  &__overlay{
+    position: relative;
+    z-index: 2;
+  }
+
+
 }
 .faq {
   background: var(--negro);
@@ -182,12 +325,20 @@
   &__center{
     width: 70%;
     max-width:50em;
+
+    @include mv(){
+      width: 95%; 
+    }
   }
   &__h3{
     margin: 1.5em 0 1em;
     font-size: 3em;
     font-weight: 600;
     text-align: center;
+
+    @include mv(){
+      font-size: 1.5em; 
+    }
   }
   &__ul {
   }
@@ -200,9 +351,15 @@
     &.activo{
       height: 33em;
       // height: auto;
+      @include mv(){
+        height: 27em;
+      }
     }
     &.activo .faq__svg{
       transform: rotate(0deg);
+    }
+    @include mv(){
+      height: 3em;
     }
   }
   &__button {
@@ -212,23 +369,42 @@
     border-bottom: 2px solid var(--negro);
     @include flex(row, nowrap, space-between, center);
     cursor: pointer;
+
+    @include mv(){
+      min-height: 3em;
+      padding: 0 1em;
+    }
   }
   &__span{
     font-size: 1.5em;
+    @include mv(){
+      font-size: 1em;
+    }
   }
   &__svg{
     width: 2em;
     height: 2em;
     transform: rotate(45deg);
     transition:all .5s ease;
+    @include mv(){
+      width: 1em;
+      height: 1em;
+    }
   }
   &__info {
     padding: 2em;
+
+    @include mv(){
+      padding: 1em;
+    }
   }
   &__p {
     margin: 0 0 1em;
     font-size: 1.5em;
     line-height: 1.5;
+    @include mv(){
+      font-size: 1em;
+    }
   }
 }
 .register {
@@ -236,6 +412,10 @@
   padding: 4em 0;
   @include flex(column, nowrap, center, center);
   text-align: center;
+
+  @include mv(){
+    padding: 1em 1em 4em;
+  }
   &__p{
     max-width: 950px;
     // background: yellow;
@@ -245,7 +425,9 @@
   &__form {
     width: 100%;
     max-width: 40em;
-    background-color: springgreen;
+    @include mv(){
+      @include flex(column, nowrap, center, center);
+    }
   }
   &__input {
     color: var(--negro);
@@ -253,6 +435,10 @@
     background: var(--blanco);
     width: 70%;
     font-size: 1.4em;
+    @include mv(){
+      width: 100%;
+      font-size: 1em;
+    }
   }
   &__submit {
     padding: 0.7em 1.4em;
@@ -261,51 +447,96 @@
     font-size: 1.5em;
     @include flex(row, nowrap, center, center);
     cursor: pointer;
+    @include mv(){
+      width: 35%;
+      font-size: 1em;
+      margin: 1em 0 0 0;
+    }
   }
 }
-.footer {
+// .footer {
+//   background: var(--negro);
+//   padding: 7vh 0 3vh;
+//   @include flex(row, nowrap, center, center);
+//   margin: .5em 0 0;
+//   color: var(--gris-footer);
+//   &__center{
+//     width: 90%;
+//     max-width: 55em;
+//   }
+//   &__fila {
+//     // background: greenyellow;
+//     @include flex(row, nowrap, space-between, flex-start);
+    
+//   }
+//   &__p {
+//     // background: rebeccapurple;
+//     margin: 0 0 2em;
+//     font-size: 1.1em;
+//   }
+//   &__ul {
+//     // background: darkgreen;
+//     margin: 0 0 2em;
+//     font-size: .8em;
+
+//     @include mv(700px){
+//       width:calc(100% / 2);
+//     }
+//   }
+//   &__li {
+//     margin: 0 0 1em;
+//     // background:gold;
+//   }
+//   &__select{
+//     max-width: 145px;
+//     margin: 0 0 1.2em;
+//     padding: .5em 1em;
+//     font-size: 1em;
+//     height: 2.5em;
+//     border: 1px solid var(--gris-footer);
+//   }
+//   .brand{
+//     font-size: .8em;
+//   }
+// }
+
+.footer{
+  margin:.3em 0 0;
+  padding: 8vh 0;
+  @include flex( row , nowrap , center , center );
   background: var(--negro);
-  padding: 7vh 0 3vh;
-  @include flex(row, nowrap, center, center);
-  margin: .5em 0 0;
   color: var(--gris-footer);
+
   &__center{
-    width: 90%;
-    max-width: 55em;
+      width: 80%;
+      max-width: 55em;
   }
-  &__fila {
-    // background: greenyellow;
-    @include flex(row, nowrap, space-between, flex-start);
+  &__fila{
+      @include flex( row , wrap , space-between , flex-start );
   }
-  &__p {
-    // background: rebeccapurple;
-    margin: 0 0 2em;
-    font-size: 1.1em;
+  &__p{
+      margin: 0 0 1.5em;
+      font-size:1em;
   }
-  &__ul {
-    // background: darkgreen;
-    margin: 0 0 2em;
-    font-size: .8em;
+  &__ul{
+      margin: 0 0 2em;
+      font-size: .8em;
+
+      @media screen and (max-width:700px){
+          width: calc( 100% / 2 );
+      }
   }
-  &__li {
-    margin: 0 0 1em;
-    // background:gold;
+  &__li{
+      margin: 0 0 1.4em;
   }
   &__select{
-    max-width: 145px;
-    margin: 0 0 1.2em;
-    padding: .5em 1em;
-    font-size: 1em;
-    height: 2.5em;
-    border: 1px solid var(--gris-footer);
+      max-width: 150px;
+      margin: 0 0 1em;
   }
   .brand{
-    font-size: .8em;
-  }
-  &__a {
-
+      margin: 2.8em 0 0;
+      font-size: .8em;
   }
 }
-.main {}
 
 
