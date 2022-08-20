@@ -21,6 +21,11 @@
       width: 35%;
       padding: 0;
     }
+    @include mv(950px){
+      width: 50%;
+      padding: 0;
+    }
+
   }
   &__img {
     width: 100%;
@@ -35,6 +40,9 @@
     width: calc(100% - 25em);
     @include mv(){
       width: 65%;
+    }
+    @include mv(950px){
+      width: 100%;
     }
   }
   &__ul {
@@ -100,7 +108,7 @@
 }
 .landing {
   width: 100%;
-  min-height: 76vh;
+  min-height: 100vh;
   background: url(../assets/SV-es-20220808-popsignuptwoweeks-perspective_alpha_website_medium.jpg) no-repeat center center / cover;
   color: var(--blanco);
   @include flex(column, nowrap, center, center);
@@ -108,7 +116,10 @@
   position: relative;
   padding: 6vh 0 0;
 
-  @include mv(){
+  @include mv(950px){
+    min-height: 97vh;
+  }
+  @include mv(550px){
     min-height: 64vh;
   }
 
@@ -123,13 +134,17 @@
   &__h2 {
     max-width: 13.5em;
     margin: 0 0 .3em;
-    font-size: 3em;
+    font-size: 4em;
     font-weight: 700;
     letter-spacing:.02em;
     position: relative;
     z-index: 2;
     line-height: 1.2em;
-    @include mv(){
+    @include mv(950px){
+    max-width: 80%;
+    font-size: 3em;
+    }
+    @include mv(550px){
       max-width: 90%;
       font-size: 1.7em;
     }
@@ -140,7 +155,7 @@
     position: relative;
     z-index: 2;
 
-    @include mv(){
+    @include mv(550px){
       // max-width: 95%;
       font-size: 1.2em;
       margin: .5em 0 .8em;
@@ -153,7 +168,7 @@
     position: relative;
     z-index: 2;
 
-    @include mv(){
+    @include mv(550px){
       max-width: 15em;
       margin: 0 0 .6em;
     }
@@ -163,7 +178,7 @@
     max-width: 41em;
     position: relative;
     z-index: 2;
-    @include mv(){
+    @include mv(950px){
       @include flex(column, nowrap, center, center);
       width: 90%;
     }
@@ -174,7 +189,10 @@
     font-size: 1.3em;
     width: 70%;
     color: var(--negro);
-    @include mv(){
+    @include mv(950px){
+      font-size: 1.2em;
+    }
+    @include mv(550px){
       width: 100%;
       font-size: 1em;
     }
@@ -187,7 +205,7 @@
     width: 30%;
     @include flex(row, nowrap, center, center);
     cursor: pointer;
-    @include mv(){
+    @include mv(950px){
       margin: .8em 0 0 0;
       font-size: 1em;
       width: 35%;
@@ -209,7 +227,7 @@
   &.inverso .specs__center{
     flex-direction: row-reverse;
     position: relative;
-    @include mv(){
+    @include mv(950px){
       @include flex(column, nowrap, center, center);
     }
   }
@@ -267,16 +285,19 @@
     width: 92%;
     max-width: 68.7em;
     @include flex(row, nowrap, space-between, center);
-    @include mv(){
+    @include mv(950px){
       @include flex(column, nowrap, center, center);
     }
   }
   &__col {
     width: calc(100%/2 - 1em);
     position: relative;
-    @include mv(){
+    @include mv(950px){
       width: 100%; 
       text-align: center;
+      &:nth-child(2){
+        width: 70%;
+      }
     }
   }
   &__h4 {
@@ -284,16 +305,25 @@
     font-size: 3em;
     font-weight: 600;
 
-    @include mv(){
+    @include mv(950px){
+      font-size: 2.5em; 
+    }
+    @include mv(550px){
       font-size: 1.7em; 
     }
   }
   &__p {
     font-size: 1.5em;
     line-height: 1.5;
-    @include mv(){
-      font-size: 1.2em; 
+    @include mv(950px){
+      max-width: 89%;
+      margin: 0 auto;
+      font-size: 1.3em; 
       line-height: 1.2em;
+    }
+    @include mv(){
+      font-size: 1em; 
+      line-height: 1em;
     }
   }
   &__video {
@@ -413,7 +443,7 @@
   @include flex(column, nowrap, center, center);
   text-align: center;
 
-  @include mv(){
+  @include mv(950px){
     padding: 1em 1em 4em;
   }
   &__p{
@@ -421,11 +451,15 @@
     // background: yellow;
     margin: 0 0 1em;
     font-size: 1.25em;
+    @include mv(950px){
+      max-width: 15em;
+      font-size: 1.5em;
+    }
   }
   &__form {
     width: 100%;
     max-width: 40em;
-    @include mv(){
+    @include mv(950px){
       @include flex(column, nowrap, center, center);
     }
   }
@@ -439,6 +473,9 @@
       width: 100%;
       font-size: 1em;
     }
+    @include mv(950px){
+      width: 80%;
+    }
   }
   &__submit {
     padding: 0.7em 1.4em;
@@ -447,7 +484,7 @@
     font-size: 1.5em;
     @include flex(row, nowrap, center, center);
     cursor: pointer;
-    @include mv(){
+    @include mv(950px){
       width: 35%;
       font-size: 1em;
       margin: 1em 0 0 0;
